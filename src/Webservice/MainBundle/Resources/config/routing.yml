@@ -1,0 +1,3 @@
+webservice_dys:
+    path:     /jsonrpc/{nomClasse}/{apiKey}
+    defaults: { _controller: WebserviceMainBundle:Server:jsonrpc, apiKey: null }

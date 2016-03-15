@@ -1,0 +1,24 @@
+services:
+    services.film:
+        class: Webservice\ServicesBundle\Services\Film\Films
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer", "@service_container"]
+
+    services.message:
+        class: Webservice\ServicesBundle\Services\Message\Messages
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer"]
+
+    services.feedBack:
+        class: Webservice\ServicesBundle\Services\FeedBack\FeedBacks
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer"]
+
+    services.adresse:
+        class: Webservice\ServicesBundle\Services\Adresse\Adresses
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer"]
+
+    services.seance:
+        class: Webservice\ServicesBundle\Services\Seances\Seances
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer"]
+
+    services.users:
+        class: Webservice\ServicesBundle\Services\User\Users
+        arguments: ["@doctrine.orm.default_entity_manager", "@serializer"]

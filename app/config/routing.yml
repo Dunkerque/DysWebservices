@@ -1,0 +1,9 @@
+webservice_services:
+    resource: "@WebserviceServicesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+webservice_dys:
+    resource: "@WebserviceMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
