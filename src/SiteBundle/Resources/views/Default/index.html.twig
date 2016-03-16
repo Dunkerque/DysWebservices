@@ -10,29 +10,87 @@
 	</section>
 	<section id="section-discover" class="section-home section-home-discover">
 		<div class="collection-cartes">
-			<div class="row">
+			<div class="row" id="row-right">
 				<div class="carte col-lg-4 col-md-4">
 					<div class="carte-contenu object-hidden-trans">
-						<h4>Découverte</h4>
-						<i class="fa fa-film"></i>
+						<div class="carte-header">
+							<h4>Découverte</h4>
+							<i class="fa fa-film"></i>
+						</div>
+						<div class="carte-description">
+							<p>Maties & Chill vous permet d'agrémenter votre culture filmographique avec un panel complet de films en tout genre.</p>
+						</div>
 					</div>
 				</div>
 				<div class="carte col-lg-4 col-md-4">
 					<div class="carte-contenu object-hidden-trans">
-						<h4>Partage</h4>
-						<i class="fa fa-share-alt"></i>
+						<div class="carte-header">
+							<h4>Partage</h4>
+							<i class="fa fa-share-alt"></i>
+						</div>
+						<div class="carte-description">
+							<p>Maties & Chill garantit un partage et une convivialité importante entre tous ses utilisateurs.<br/>Profitez de la vie.</p>
+						</div>
 					</div>
 				</div>
 				<div class="carte col-lg-4 col-md-4">
 					<div class="carte-contenu object-hidden-trans">
-						<h4>Convivialité</h4>
-						<i class="fa fa-thumbs-o-up"></i>
+						<div class="carte-header">
+							<h4>Convivialité</h4>
+							<i class="fa fa-thumbs-o-up"></i>
+						</div>
+						<div class="carte-description">
+							<p>Maties & Chill agrandit votre cercle social en vous proposant des séances selon vos affinités et vos gouts. </p>
+						</div>
 					</div>
-				</div>
+				</div>		
+			</div>
+			<div class="row" id="row-left">
 				<div class="panel-boutons col-lg-12 col-md-12">
 					<button type="button" class="button button-inscription object-hidden-rot">S'inscrire</button>
 					<label class="object-hidden-trans">ou</label>
 					<button type="button" class="button button-connexion object-hidden-rot">Se connecter</button>
+				</div>
+			</div>
+			<div class="form-panel">
+				<div class="panel-boutons col-lg-12 col-md-12">
+					<button type="button" class="button button-inscription object-hidden-rot">S'inscrire</button>
+					<label class="object-hidden-trans">ou</label>
+					<button type="button" class="button button-connexion object-hidden-rot">Se connecter</button>
+				</div>
+			</div>
+			<div class="form-inscription">
+				<div class="col-lg-3 col-md-2">
+				</div>
+				<div class="panel-connexion col-lg-6 col-md-8">
+					<form id="inscription" method="POST" action="inscription.php">
+						<h4>Inscription</h4>
+						<input type="text" name="nom" placeholder="Nom" required/>
+						<input type="text" name="prenom" placeholder="Prénom" required/>
+						<input type="text" name="datenaissance" placeholder="Date de naissance" required/>
+						<input type="text" name="telephone" placeholder="Téléphone" required/>
+						<input type="email" name="email" placeholder="E-mail" required/>
+						<input type="password" name="mdp" placeholder="Mot de passe" required/>
+						<button type="submit" class="button button-submit">Inscription</button>
+						<button type="button" class="button button-cancel">Retour</button>
+					</form>
+				</div>
+				<div class="col-lg-3 col-md-2">
+				</div>
+			</div>
+			<div class="form-connexion">
+				<div class="col-lg-3 col-md-2">
+				</div>
+				<div class="panel-connexion col-lg-6 col-md-8">
+					<form id="connexion" method="POST" action="connexion.php">
+						<h4>Connexion</h4>
+						<input type="email" name="email" placeholder="E-mail" required/>
+						<input type="password" name="mdp" placeholder="Mot de passe" required/>
+						<button type="submit" class="button button-submit">Connexion</button>
+						<button type="button" class="button button-cancel">Retour</button>
+					</form>
+				</div>
+				<div class="col-lg-3 col-md-2">
 				</div>
 			</div>
 		</div>
@@ -42,6 +100,7 @@
 {% block javascripts %}
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('nav').css("opacity", 0);
 			setTimeout(function(){
 				$('h1').toggleClass('object-hidden-trans');
 			}, 500);
@@ -50,6 +109,9 @@
 			}, 1200);
 			setTimeout(function(){
 				$('.button-get-started').toggleClass('object-hidden-trans');
+				setInterval(function(){
+					$('.button-get-started').toggleClass('button_gros');
+				}, 500);
 			}, 1900);
 
 			$('.button-get-started').click(function(){
@@ -66,9 +128,54 @@
 					}, 1500);
 					setTimeout(function(){
 						$('label').toggleClass('object-hidden-trans');
+						$('nav').css("opacity", 1);
 					}, 2000);
 				}, 100);
 			});
+
+			$('body').on('click', '.button-inscription', function(event) {
+				$('#row-right').addClass('move-right');
+				$('#row-left').addClass('move-left');
+				setTimeout(function(){
+					$('#row-right').hide();
+					$('#row-left').html( $('.form-inscription').html() );
+					$('#row-left').removeClass('move-left');
+					$('.section-home-discover').toggleClass('section-home-discover-form');
+					$('.button-cancel').click(function(){
+						$('#row-left').addClass('move-left');
+						$('#row-right').show();
+						setTimeout(function(){
+							$('.section-home-discover').toggleClass('section-home-discover-form');
+							$('#row-left').html( $('.form-panel').html() );
+							$('#row-left').removeClass('move-left');
+							$('#row-right').removeClass('move-right');
+						}, 600);
+					});
+				}, 600);
+
+			});
+
+			$('body').on('click', '.button-connexion', function(event) {
+				$('#row-right').addClass('move-right');
+				$('#row-left').addClass('move-left');
+				setTimeout(function(){
+					$('#row-right').hide();
+					$('#row-left').html( $('.form-connexion').html() );
+					$('#row-left').removeClass('move-left');
+					$('.section-home-discover').toggleClass('section-home-discover-form');
+					$('.button-cancel').click(function(){
+						$('#row-left').addClass('move-left');
+						$('#row-right').show();
+						setTimeout(function(){
+							$('.section-home-discover').toggleClass('section-home-discover-form');
+							$('#row-left').html( $('.form-panel').html() );
+							$('#row-left').removeClass('move-left');
+							$('#row-right').removeClass('move-right');
+						}, 600);
+					});
+				}, 600);
+			});
+
 		});
 	</script>
 {% endblock %}

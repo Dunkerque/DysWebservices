@@ -36,7 +36,46 @@
 	border: 2px solid transparent;
 }
 
+.button-submit{
+	border: none;
+	background-color: #2E8ECE;
+	padding: .8vw 2vw;
+	border: 2px solid transparent;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: inherit;
+	margin: 0;
+	margin-top: 2vw;
+}
+
+.button-submit:hover{
+	background-color: #1ABC9C;
+}
+
+.button-cancel{
+	border: none;
+	background-color: #83A0B3;
+	padding: .8vw 2vw;
+	border: 2px solid transparent;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: inherit;
+	margin: 0;
+	margin-top: 2vw;
+}
+
+.button-cancel:hover{
+	background-color: #D6922A;
+}
+
 .button-inscription:hover, .button-connexion:hover{
 	border: 2px solid white;
 	background-color: transparent;
+}
+
+
+
+
+.button_gros{
+	opacity: .6;
 }

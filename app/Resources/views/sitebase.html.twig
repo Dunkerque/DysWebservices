@@ -13,11 +13,13 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/boutons.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/effets.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaire.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/main_logo.png') }}" />
     </head>
     <body>
         {% block body %}
             <nav class="barre-nav">
+                <img id="logo" src="{{ asset('assets/img/main_logo.png') }}" alt="logo"/>
             </nav>
             {% block main %}
             {% endblock %}
@@ -26,5 +28,12 @@
         <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/js/fonctions.js') }}"></script>
         {% block javascripts %}{% endblock %}
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#logo').click(function(){
+                        document.location.reload();
+                    });
+                });
+            </script>
     </body>
 </html>

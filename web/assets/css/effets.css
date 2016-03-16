@@ -12,3 +12,13 @@
 	opacity: 0;
 	transform: rotateX(90deg);
 }
+
+.move-right{
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.move-left{
+	opacity: 0;
+	transform: translateX(-100%);
+}
