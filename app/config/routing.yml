@@ -1,3 +1,8 @@
+site:
+    resource: "@SiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 webservice_services:
     resource: "@WebserviceServicesBundle/Resources/config/routing.yml"
     prefix:   /

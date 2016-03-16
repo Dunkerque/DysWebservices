@@ -1,0 +1,42 @@
+.button{
+	border: none;
+	border-radius: 5px;
+	font-size: 1.4vw;
+	margin: 2vw;
+	font-family: 'Droid Sans', sans-serif;
+	padding: .4vw 1vw;
+	outline: none;
+	transition: all .5s;
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+}
+
+.button-get-started{
+	background-color: transparent;
+	border: 2px solid white;
+	color: white;
+}
+
+.button-get-started:hover{
+	font-size: 1.7vw;
+}
+
+.button-connexion{
+	border: none;
+	background-color: #54ACD2;
+	padding: .8vw 2vw;
+	border: 2px solid transparent;
+}
+
+.button-inscription{
+	border: none;
+	background-color: #1ABC9C;
+	padding: .8vw 2vw;
+	border: 2px solid transparent;
+}
+
+.button-inscription:hover, .button-connexion:hover{
+	border: 2px solid white;
+	background-color: transparent;
+}

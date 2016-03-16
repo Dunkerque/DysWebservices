@@ -1,0 +1,14 @@
+.object-hidden{
+	opacity: 0;
+}
+
+.object-hidden-trans{
+	opacity: 0;
+	transform-origin: top 0 left 0;
+	transform: scale(1.25);
+}
+
+.object-hidden-rot{
+	opacity: 0;
+	transform: rotateX(90deg);
+}

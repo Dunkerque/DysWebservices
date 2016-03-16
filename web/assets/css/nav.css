@@ -1,0 +1,19 @@
+nav{
+	background-color: transparent;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+}
+
+nav > img{
+	width: 8vh;
+	margin: 1vh;
+	opacity: 0.4;
+	cursor: pointer;
+}
+
+nav > img:hover{
+	opacity: 0.5;
+}

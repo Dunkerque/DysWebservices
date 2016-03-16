@@ -1,0 +1,74 @@
+{% extends 'sitebase.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+	<section class="section-home section-home-start">
+		<h1 class="object-hidden-trans">Maties & Chill</h1>
+		<h2 class="object-hidden-rot">Une envie cinéma ?</h2>
+		<button type="button" class="button button-get-started object-hidden-trans">Démarrer l'aventure</button>
+	</section>
+	<section id="section-discover" class="section-home section-home-discover">
+		<div class="collection-cartes">
+			<div class="row">
+				<div class="carte col-lg-4 col-md-4">
+					<div class="carte-contenu object-hidden-trans">
+						<h4>Découverte</h4>
+						<i class="fa fa-film"></i>
+					</div>
+				</div>
+				<div class="carte col-lg-4 col-md-4">
+					<div class="carte-contenu object-hidden-trans">
+						<h4>Partage</h4>
+						<i class="fa fa-share-alt"></i>
+					</div>
+				</div>
+				<div class="carte col-lg-4 col-md-4">
+					<div class="carte-contenu object-hidden-trans">
+						<h4>Convivialité</h4>
+						<i class="fa fa-thumbs-o-up"></i>
+					</div>
+				</div>
+				<div class="panel-boutons col-lg-12 col-md-12">
+					<button type="button" class="button button-inscription object-hidden-rot">S'inscrire</button>
+					<label class="object-hidden-trans">ou</label>
+					<button type="button" class="button button-connexion object-hidden-rot">Se connecter</button>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setTimeout(function(){
+				$('h1').toggleClass('object-hidden-trans');
+			}, 500);
+			setTimeout(function(){
+				$('h2').toggleClass('object-hidden-rot');
+			}, 1200);
+			setTimeout(function(){
+				$('.button-get-started').toggleClass('object-hidden-trans');
+			}, 1900);
+
+			$('.button-get-started').click(function(){
+				$('.section-home-discover').css("display", "block");
+				setTimeout(function(){
+					scroller('#section-discover');
+					setTimeout(function(){
+						$('.section-home-start').css("display", "none");
+						$('.carte-contenu').toggleClass('object-hidden-trans');
+					}, 900);
+					setTimeout(function(){
+						$('.button-inscription').toggleClass('object-hidden-rot');
+						$('.button-connexion').toggleClass('object-hidden-rot');
+					}, 1500);
+					setTimeout(function(){
+						$('label').toggleClass('object-hidden-trans');
+					}, 2000);
+				}, 100);
+			});
+		});
+	</script>
+{% endblock %}
