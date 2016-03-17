@@ -1,0 +1,19 @@
+{% extends 'sitebase.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block nom_user %}{{ user.first_name }}{% endblock %}
+
+{% block main %}
+	<section class="section-site section-all-seances">
+		Hola
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.section-all-seances').css("margin-top", $('nav').height());
+		});
+	</script>
+{% endblock %}

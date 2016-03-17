@@ -125,7 +125,7 @@ class Users
      * @param int $age
      * @return string
      */
-    public function createUser($name, $lastName, $phone, $mail, $password, $age)
+    public function createUser($name, $lastName, $phone, $mail, $password, $birthdate)
     {
 
         if(!$this->checkUserExist($mail)) {
@@ -135,7 +135,7 @@ class Users
             $user->setPhone($phone);
             $user->setMail($mail);
             $user->setPassword($password);
-            $user->setAge($age);
+            $user->setBirthdate($birthdate);
 
             $this->em->persist($user);
             $this->em->flush();
@@ -175,12 +175,12 @@ class Users
      * @param string $phone
      * @param string $mail
      * @param string $password
-     * @param int $age
+     * @param string $birthdate
      *
      * @return string
      */
 
-    public function updateUser($id, $firstName, $lastName, $phone, $mail, $password, $age)
+    public function updateUser($id, $firstName, $lastName, $phone, $mail, $password, $birthdate)
     {
         $user = $this->em->getRepository("WebserviceMainBundle:User")->find($id);
 
@@ -191,7 +191,7 @@ class Users
             $user->setPhone($phone);
             $user->setMail($mail);
             $user->setPassword($password);
-            $user->setAge($age);
+            $user->setBirthdate($birthdate);
 
             $this->em->flush();
 

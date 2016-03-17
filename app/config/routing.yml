@@ -11,4 +11,9 @@ webservice_dys:
     resource: "@WebserviceMainBundle/Resources/config/routing.yml"
     prefix:   /
 
+site_user_connexion:
+    path: /connexion
+    defaults: { _controller: "@SiteBundle:Default:connexion" }
+    requirements:
+        _method: GET
 

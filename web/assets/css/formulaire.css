@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+.panel-connexion{
+	text-align: left;
+	padding: 2vw;
+	border-radius: 1.5vw;
+	border: 1px solid white;
+	background-color: white;
+}
+
+.panel-connexion h4{
+	font-size: 4vw;
+	color: #242529;
+	text-transform: uppercase;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 1.7vw;
+}
+
+.panel-connexion input{
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid lightgrey;
+	background-color: transparent;
+	font-size: 1.3vw;
+	margin-bottom: 1.7vw;
+	color: black;
+	font-weight: bold;
+	outline: none;
+	text-transform: uppercase;
+}
+
+ 
+.panel-connexion input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: lightgrey;
+}
+
+.form-inscription, .form-connexion, .form-panel{
+	display: none;
+}
+
+form .label-placeholder{
+	opacity: 0;
+	transition: all .7s;
+	font-size: 1vw;
+	color: #929DA5;
+	text-transform: uppercase;
+}
+
+.form-disconnect{
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999999999;
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+}
+
+.form-disconnect-content{
+	background-color: transparent;
+	width: 100vw;
+	height: 100vh;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.form-disconnect-content h4{
+	font-size: 5vh;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	transition: all .5s;
+}

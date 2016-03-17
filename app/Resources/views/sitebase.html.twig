@@ -14,13 +14,22 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/boutons.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/effets.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaire.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/site.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/main_logo.png') }}" />
     </head>
     <body>
         {% block body %}
             <nav class="barre-nav">
                 <img id="logo" src="{{ asset('assets/img/main_logo.png') }}" alt="logo"/>
+                <button class="button button-nav button-profil" type="button"><i class="fa fa-user"></i> Bonjour {% block nom_user %}{% endblock %}</button>
+                <button class="button button-nav button-deconnexion" type="button"><i class="fa fa-power-off"></i></button>
             </nav>
+            <div class="form-disconnect">
+                <div class="form-disconnect-content">
+                    <h4>Se déconnecter ?</h4>
+                    <button class="button button-deconnexion-validation" type="button">Se déconnecter</button><button class="button button-deconnexion-annulation" type="button">Rester connecté</button>
+                </div>
+            </div>
             {% block main %}
             {% endblock %}
         {% endblock %}
@@ -32,6 +41,15 @@
                 $(document).ready(function(){
                     $('#logo').click(function(){
                         document.location.reload();
+                    });
+                    $('.button-deconnexion').click(function(){
+                        $('.form-disconnect').fadeIn();
+                        $('.button-deconnexion-validation').click(function(){
+                            document.location.href="{{ path('site_user_disconnect') }}";
+                        });
+                        $('.button-deconnexion-annulation').click(function(){
+                            $('.form-disconnect').fadeOut();
+                        });
                     });
                 });
             </script>

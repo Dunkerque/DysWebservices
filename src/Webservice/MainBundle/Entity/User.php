@@ -55,22 +55,22 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="age", type="integer")
+     * @ORM\Column(name="birthdate", type="string", length=512)
      */
-    private $age;
+    private $birthdate;
     /**
      * @return int
      */
-    public function getAge()
+    public function getBirthdate()
     {
-        return $this->age;
+        return $this->birthdate;
     }
     /**
-     * @param int $age
+     * @param string $birthdate
      */
-    public function setAge($age)
+    public function setBirthdate($birthdate)
     {
-        $this->age = $age;
+        $this->birthdate = $birthdate;
     }
 
     /**

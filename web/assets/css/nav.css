@@ -1,15 +1,31 @@
 nav{
-	background-color: transparent;
+	background-color: #34495E;
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	z-index: 999;
 	transition: all .7s;
+	-webkit-filter: grayscale(60%);
+	-moz-filter: grayscale(60%);
+	-ms-filter: grayscale(60%);
+	-o-filter: grayscale(60%);
+	filter: grayscale(60%);
+	text-align: right;
+	border-bottom: 2px solid #BEC3C7; 
+	padding-right: 3vh;
 }
 
 nav > img{
-	width: 8vh;
-	margin: 1vh;
+	width: 9vh;
+	margin: .5vh;
+	margin-left: 3vh;
+	padding: .5vh;
 	cursor: pointer;
+	float: left;
+	border-radius: 5px;
+}
+
+.label-user{
+	font-weight: normal;
 }
