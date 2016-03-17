@@ -11,7 +11,7 @@
 	<section id="section-discover" class="section-home section-home-discover">
 		<div class="collection-cartes">
 			<div class="row" id="row-right">
-				<div class="carte col-lg-4 col-md-4">
+				<div class="carte col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="carte-contenu object-hidden-trans">
 						<div class="carte-header">
 							<h4>Découverte</h4>
@@ -22,7 +22,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="carte col-lg-4 col-md-4">
+				<div class="carte col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="carte-contenu object-hidden-trans">
 						<div class="carte-header">
 							<h4>Partage</h4>
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="carte col-lg-4 col-md-4">
+				<div class="carte col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="carte-contenu object-hidden-trans">
 						<div class="carte-header">
 							<h4>Convivialité</h4>
@@ -60,37 +60,53 @@
 				</div>
 			</div>
 			<div class="form-inscription">
-				<div class="col-lg-3 col-md-2">
+				<div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
 				</div>
-				<div class="panel-connexion col-lg-6 col-md-8">
+				<div class="panel-connexion col-lg-6 col-md-8 col-sm-10 col-xs-10">
 					<form id="inscription" method="POST" action="inscription.php">
 						<h4>Inscription</h4>
-						<input type="text" name="nom" placeholder="Nom" required/>
-						<input type="text" name="prenom" placeholder="Prénom" required/>
-						<input type="text" name="datenaissance" placeholder="Date de naissance" required/>
-						<input type="text" name="telephone" placeholder="Téléphone" required/>
-						<input type="email" name="email" placeholder="E-mail" required/>
-						<input type="password" name="mdp" placeholder="Mot de passe" required/>
+						<div class="group-input-label">
+							<div class="label-placeholder">Nom</div><input type="text" name="nom" placeholder="Nom" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">Prénom</div><input type="text" name="prenom" placeholder="Prénom" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">Date de naissance</div><input type="text" name="datenaissance" placeholder="Date de naissance" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">Téléphone</div><input type="text" name="telephone" placeholder="Téléphone" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">E-mail</div><input type="email" name="email" placeholder="E-mail" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">Mot de passe</div><input type="password" name="mdp" placeholder="Mot de passe" required/>
+						</div>
 						<button type="submit" class="button button-submit">Inscription</button>
 						<button type="button" class="button button-cancel">Retour</button>
 					</form>
 				</div>
-				<div class="col-lg-3 col-md-2">
+				<div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
 				</div>
 			</div>
 			<div class="form-connexion">
-				<div class="col-lg-3 col-md-2">
+				<div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
 				</div>
-				<div class="panel-connexion col-lg-6 col-md-8">
+				<div class="panel-connexion col-lg-6 col-md-8 col-sm-10 col-xs-10">
 					<form id="connexion" method="POST" action="connexion.php">
 						<h4>Connexion</h4>
-						<input type="email" name="email" placeholder="E-mail" required/>
-						<input type="password" name="mdp" placeholder="Mot de passe" required/>
+						<div class="group-input-label">
+							<div class="label-placeholder">E-mail</div><input type="email" name="email" placeholder="E-mail" required/>
+						</div>
+						<div class="group-input-label">
+							<div class="label-placeholder">Mot de passe</div><input type="password" name="mdp" placeholder="Mot de passe" required/>
+						</div>
 						<button type="submit" class="button button-submit">Connexion</button>
 						<button type="button" class="button button-cancel">Retour</button>
 					</form>
 				</div>
-				<div class="col-lg-3 col-md-2">
+				<div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
 				</div>
 			</div>
 		</div>
@@ -174,6 +190,14 @@
 						}, 600);
 					});
 				}, 600);
+			});
+
+			$('body').on('keyup', 'input', function(){
+				if($(this).val().length > 0){
+					$(this).parent().find('.label-placeholder').css("opacity", 1);
+				}else{
+					$(this).parent().find('.label-placeholder').css("opacity", 0);	
+				}
 			});
 
 		});
