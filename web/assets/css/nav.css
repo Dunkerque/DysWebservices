@@ -1,5 +1,15 @@
 nav{
-	background-color: #34495E;
+
+	background: url('../img/new.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	background: rgba(1, 1, 1, .3);
+	background: url('../img/mur.png?A');
+	
+	 /* IE6-9 fallback on horizontal gradient */
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -12,8 +22,24 @@ nav{
 	-o-filter: grayscale(60%);
 	filter: grayscale(60%);
 	text-align: right;
-	border-bottom: 2px solid #BEC3C7; 
 	padding-right: 3vh;
+}
+
+.filtre-nav{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+
+}
+
+.barre-nav h4{
+	color: white;
+	float: left;
+	margin: 3vh;
+	margin-left: 9vh;
+	font-size: 4vh;
 }
 
 nav > img{

@@ -1,0 +1,178 @@
+body{
+	background-color: white;
+	display: none;
+	background: url('../img/new.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.section-cover{
+	background: url('../img/new.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	height: 100vh;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100vw;
+	text-align: center;
+}
+
+.cover-text{
+	transition: all .5s;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	text-shadow: 6px 6px 20px #000000;
+	color: white;
+}
+
+.section-cover h1{
+	font-size: 7vw;
+}
+
+.section-cover h2{
+	font-size: 3vw;
+}
+
+.section-cover h3{
+	font-size: 8vw;
+	margin: 4vw;
+}
+
+.go-all-seances{
+	font-size: 8vw;
+	padding: 0 !important;
+	margin: 2vw;
+	margin-top: 0;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: white;
+	transition: all .5s;
+}
+
+.seance-block{
+	padding: 2vh;
+}
+
+.seance-layout{
+	box-shadow: 1px 1px 20px #555;
+	background-color: white;
+	cursor: pointer;
+	position: relative;
+}
+
+.seance-layout:hover .seance-description{
+	top:0;
+	opacity: 1;
+}
+
+.seance-layout:hover .seance-titre-film{
+	opacity: 0;
+}
+
+
+.seance-layout img{
+	width: 100%;
+
+}
+
+.section-all-seances h3{
+	padding-left: 2vh;
+	color: #7E8690;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+}
+
+.seance-form-recherche{
+	padding: 2vh;
+}
+
+.seance-description{
+	position: absolute;
+	top: 100vh;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	opacity: 0;
+	transition: all .5s;
+	overflow: auto;
+}
+
+.seance-description div{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	margin: 1vh;
+	font-size: 1.4vh;
+}
+
+.section-all-seances > .row > div:first-child{
+	position: relative;
+}
+
+
+.seance-description-titre{
+	color: #5677A1;
+	font-weight: bold;
+	text-align: center;
+	font-size: 2vh !important;
+}
+
+.seance-description-horaires{
+	text-align: center;
+	color: #5677A1;
+}
+
+.section-all-seances{
+	padding: 0vw;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100 */
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.seance-prix-seance{
+	position: absolute;
+	bottom:0;
+	right: -1px;
+	color: white;
+	background-color: #5677A1;
+	padding-left: 1.5vh;
+	padding-top: 1vh;
+	padding-bottom: .3vh;
+	padding-right: .3vh;
+	border-top-left-radius: 100%;
+}
+
+.seance-titre-film{
+	position: relative;
+	font-size: 1.4vh;
+	padding: 1vh;
+	display: table-cell;
+	font-family: 'Droid Sans', sans-serif;
+	width: 100vh;
+	text-align: left;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #28324E;
+	background-color: transparent;
+}
+
+.section-all-seances{
+	opacity: 0;
+	transition: all .5s;
+}

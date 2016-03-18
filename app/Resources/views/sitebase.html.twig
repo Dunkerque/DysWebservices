@@ -15,12 +15,16 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/effets.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaire.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/site.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/seance.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/main_logo.png') }}" />
     </head>
     <body>
         {% block body %}
             <nav class="barre-nav">
+                {#
                 <img id="logo" src="{{ asset('assets/img/main_logo.png') }}" alt="logo"/>
+                #}
+                <h4>Maties & Chill</h4>
                 <button class="button button-nav button-profil" type="button"><i class="fa fa-user"></i> Bonjour {% block nom_user %}{% endblock %}</button>
                 <button class="button button-nav button-deconnexion" type="button"><i class="fa fa-power-off"></i></button>
             </nav>
@@ -39,6 +43,7 @@
         {% block javascripts %}{% endblock %}
             <script type="text/javascript">
                 $(document).ready(function(){
+                    $('body').fadeIn(500);
                     $('#logo').click(function(){
                         document.location.reload();
                     });

@@ -1,19 +1,114 @@
 {% extends 'sitebase.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Séances{% endblock %}
 
 {% block nom_user %}{{ user.first_name }}{% endblock %}
 
 {% block main %}
-	<section class="section-site section-all-seances">
-		Hola
+	<section class="section-cover">
+		<h1 class="cover-text">Hello {{ user.first_name }} !</h1>
+		<h3 class="cover-text"><i class="fa fa-film"></i></h3>
+		<h2 class="cover-text">Ne manquez pas <br/>notre sélection du {{ "now"|date("d/m") }} </h2>
+		<button type="button" class="go-all-seances"><i class="fa fa-angle-double-down"></i></button>
+	</section>
+	<section id="debut-page" class="section-site section-all-seances">
+		<div class="row">
+			<div class="col-lg-3 col-md-2 hidden-sm hidden-xs">
+				<div>
+					<h3>Une envie particulière ?</h3>
+					<div class="seance-form-recherche">
+						<div class="input-with-icon">
+							<input type="text" class="search-film" placeholder="Un mot clef ?"/>
+							<button type="button" class="float-button-search"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+				<div class="seance-payantes">
+					<h3>Séances à proximité:</h3>
+					<div class="row">
+						{% for seance in freeSeances %}
+							<div class="seance-block col-lg-2 col-md-3 col-sm-4 col-xs-6">
+								<div class="seance-layout" data-seance="{{ seance.id }}">
+									<img src="{{ seance.id_film.image }}" alt="affiche"/>
+									<div class="seance-description">
+										<div class="seance-description-titre">{{ seance.id_film.title }}</div>
+										<div class="seance-description-category"><label>Categorie:</label> {{ seance.id_film.category }}</div>
+										<div class="seance-description-resume">{{ seance.id_film.description }}</div>
+										<div class="seance-description-horaires">
+											Début: {{ seance.start_seance }}<br/>Fin: {{ seance.end_seance }}
+										</div>
+										<div class="seance-description-places">
+											{{ seance.nbr_place }} places restantes
+										</div>
+										<div class="seance-description-auteur">
+											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
+										</div>
+									</div>
+									<div class="seance-titre-film">		 
+										{{ seance.id_film.title }}
+										<div class="seance-prix-seance">
+											{{ seance.price }}€
+										</div>
+									</div>
+								</div>
+							</div>
+					   {% endfor %}
+					   {% for seance in paidSeances %}
+							<div class="seance-block col-lg-2 col-md-3 col-sm-4 col-xs-6">
+								<div class="seance-layout" data-seance="{{ seance.id }}">
+									<img src="{{ seance.id_film.image }}" alt="affiche"/>
+									<div class="seance-description">
+										<div class="seance-description-titre">{{ seance.id_film.title }}</div>
+										<div class="seance-description-category"><label>Categorie:</label> {{ seance.id_film.category }}</div>
+										<div class="seance-description-resume">{{ seance.id_film.description }}</div>
+										<div class="seance-description-horaires">
+											Début: {{ seance.start_seance }}<br/>Fin: {{ seance.end_seance }}
+										</div>
+										<div class="seance-description-places">
+											{{ seance.nbr_place }} places restantes
+										</div>
+										<div class="seance-description-auteur">
+											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
+										</div>
+									</div>
+									<div class="seance-titre-film">		 
+										{{ seance.id_film.title }}
+										<div class="seance-prix-seance">
+											{{ seance.price }}€
+										</div>
+									</div>
+								</div>
+							</div>
+					   {% endfor %}
+				    </div>
+				</div>
+			</div>
+		</div>
 	</section>
 {% endblock %}
 
 {% block javascripts %}
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.section-all-seances').css("margin-top", $('nav').height());
+
+			$('.barre-nav').css("opacity", 0);
+
+			$('body').on('click', '.go-all-seances', function(){
+				scroller('#debut-page');
+			});
+
+			$('.seance-layout').mouseover(function(){
+				$("body").css("overflow","hidden");
+			}).mouseout(function(){
+				$("body").css("overflow","auto");
+			});
+
+			setTimeout(function(){
+				resizeHome();
+			}, 800);
+
 		});
 	</script>
 {% endblock %}

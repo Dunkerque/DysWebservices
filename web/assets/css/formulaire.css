@@ -17,6 +17,39 @@
 	margin-bottom: 1.7vw;
 }
 
+.input-with-icon{
+	position: relative;
+}
+
+.float-button-search{
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	bottom: 1px;
+	color: #7E8690;
+	background-color: white;
+	border: none;
+	outline: none;
+	width: 6vh;
+	transition: all .5s;
+}
+
+.float-button-search:hover{
+	background-color: #7E8690;
+	color: white;
+}
+
+.search-film{
+	outline: none;
+	width: 100%;
+	font-size: 2vh;
+	padding: .5vh;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	border: 1px solid #E3E3E3;
+	padding-right: 7vh;
+}
+
 .panel-connexion input{
 	width: 100%;
 	border: none;
@@ -47,15 +80,16 @@ form .label-placeholder{
 	text-transform: uppercase;
 }
 
+
 .form-disconnect{
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 99999999999;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.9);
 	text-align: center;
 }
 

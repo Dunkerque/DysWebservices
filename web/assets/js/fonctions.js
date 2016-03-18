@@ -8,6 +8,59 @@ function scroller(href){
 	});
 }
 
+function resizeHome(){
+  var taille_page = $('.section-cover').height();
+
+  $('.section-all-seances').css("padding-top", $('nav').height() +10);
+  var max_value = 0;
+  $('.seance-block img').each(function(){
+    var hauteur = $(this).height();
+    if(hauteur > max_value){
+      max_value = hauteur;
+    }
+  });
+  $('.seance-block img').each(function(){
+    $(this).css("height", max_value-40);
+  });
+  max_value = 0;
+  $('.seance-titre-film').each(function(){
+    var hauteur = $(this).height();
+    if(hauteur > max_value){
+      max_value = hauteur;
+    }
+  });
+  $('.seance-titre-film').each(function(){
+    $(this).css("height", max_value+20);
+  });
+  max_value = 0;
+  $('.seance-block').each(function(){
+    var hauteur = $(this).height();
+    if(hauteur > max_value){
+      max_value = hauteur;
+    }
+  });
+  $('.seance-block').each(function(){
+    $(this).css("height", max_value+20);
+  });
+
+  setInterval(function(){
+    $('.go-all-seances').toggleClass('button_gros');
+  }, 500);
+
+  $(window).scroll(function(){
+    $(window).scroll( function() { 
+      var scrolled_val = $(document).scrollTop().valueOf();
+      if(scrolled_val >= taille_page){
+        $('.barre-nav').css("opacity", 1);
+        $('.section-all-seances').css("opacity", 1);
+      }else{
+        $('.barre-nav').css("opacity", 0);
+      }
+    });
+  });
+  $('.section-all-seances').css("opacity", 1);
+}
+
 /*
  *  md5.js 1.0b 27/06/96
  *

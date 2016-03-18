@@ -23,16 +23,16 @@ class Seance
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="start_Seance", type="datetime")
+     * @ORM\Column(name="start_Seance", type="string")
      */
     private $startSeance;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="end_Seance", type="datetime")
+     * @ORM\Column(name="end_Seance", type="string")
      */
     private $endSeance;
 

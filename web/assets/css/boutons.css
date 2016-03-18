@@ -109,6 +109,12 @@
 	padding: 0.4vh 2vh;
 }
 
+
+
+.button-nav:last-child{
+	margin-right: 7vh;
+}
+
 .button-deconnexion{
 	background-color: #FF2A16;
 }

@@ -35,7 +35,11 @@ class DefaultController extends Controller
 	    	$getUsers = $this->get("services.users");
 			$user = $getUsers->findUserById($id_user);
 
-	        return $this->render('SiteBundle:Default:home.html.twig', array('id_user' => $id_user, 'user' => $user));
+			$getSeances = $this->get("services.seance");
+			$freeSeances = $getSeances->getFreeSeance();
+			$paidSeances = $getSeances->getPaidSeance();
+
+	        return $this->render('SiteBundle:Default:home.html.twig', array('id_user' => $id_user, 'user' => $user, 'freeSeances' => $freeSeances, 'paidSeances' => $paidSeances));
 	    }else{
 	    	return $this->redirect( $this->generateUrl('site_carrefour') );
 	    }
