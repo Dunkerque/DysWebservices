@@ -9,11 +9,7 @@ body{
 }
 
 .section-cover{
-	background: url('../img/new.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
@@ -71,7 +67,7 @@ body{
 }
 
 .seance-layout:hover .seance-description{
-	top:0;
+	left: 0;
 	opacity: 1;
 }
 
@@ -87,7 +83,8 @@ body{
 
 .section-all-seances h3{
 	padding-left: 2vh;
-	color: #7E8690;
+	font-size: 3vh;
+	color: black;
 	font-family: 'Droid Sans', sans-serif;
 	font-weight: bold;
 }
@@ -98,8 +95,8 @@ body{
 
 .seance-description{
 	position: absolute;
-	top: 100vh;
-	left: 0;
+	top: 0;
+	left: 100vw;
 	right: 0;
 	bottom: 0;
 	background-color: white;
@@ -117,8 +114,18 @@ body{
 	font-size: 1.4vh;
 }
 
-.section-all-seances > .row > div:first-child{
+.section-all-seances > .row{
+}
+
+.section-all-seances > .row > div{
 	position: relative;
+	padding: 2vh;
+}
+
+.section-all-seances > .row > div > div{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f6f6+0,e1e1e1+49,f1f1f1+50,ffffff+100 */
+	background-color: white;
+	padding: 2vh;
 }
 
 
@@ -129,6 +136,7 @@ body{
 	font-size: 2vh !important;
 }
 
+
 .seance-description-horaires{
 	text-align: center;
 	color: #5677A1;
@@ -137,12 +145,12 @@ body{
 .section-all-seances{
 	padding: 0vw;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100 */
-	background: rgb(255,255,255); /* Old browsers */
-	background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e0eff9+0,b5c6d0+49,d8e1e7+50,f2f6f8+100 */
+	background: #f6f8f9; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=1 );
 }
 
 .seance-prix-seance{
@@ -150,7 +158,7 @@ body{
 	bottom:0;
 	right: -1px;
 	color: white;
-	background-color: #5677A1;
+	background-color: #2F84EA;
 	padding-left: 1.5vh;
 	padding-top: 1vh;
 	padding-bottom: .3vh;

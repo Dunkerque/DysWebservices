@@ -1,0 +1,153 @@
+.header-profile{
+	background-color: black;
+	height: 35vh;
+	background: url('../img/new.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+	transition: all .5s;
+}
+
+.header-profile-navbar-buttons{
+	background-color: #E77E23;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	padding: 2vh 2vh;
+	text-align: left;
+	font-size: 2.3vh;
+	z-index: 99;
+	text-align: center;
+	transition: all .5s;
+	opacity: 0;
+	transform: rotateY(-90deg);
+}
+
+.header-profile-navbar-buttons-visible{
+	transform: rotateY(0);
+	opacity: 1;
+}
+
+.header-profile-navbar-buttons > button{
+	width: 30%;
+}
+
+.header-profile-navbar{
+	background-color: #2F84EA;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	color: white;
+	padding: 2vh 2vh;
+	text-align: left;
+	font-size: 2.3vh;
+}
+
+.header-profile-navbar > i{
+	cursor: pointer;
+}
+
+.header-profile-navbar > i:hover{
+	color: #3CFF6F;
+}
+
+.header-profile-navbar label{
+	margin: 0 !important;
+	padding-left: 2vh;
+}
+
+.header-profile-navbar .fa-ellipsis-v{
+	float: right;
+	font-size: 2.5vh;
+	padding-top: .4vh;
+	padding-right: .4vh;
+}
+
+.profile-carte{
+	background-color: white;
+	text-align: center;
+	position: relative;
+	-moz-box-shadow: 1px 1px 5px 2px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 5px 2px #cfcfcf;
+	-o-box-shadow: 1px 1px 5px 2px #cfcfcf;
+	box-shadow: 1px 1px 5px 2px #cfcfcf;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=5);
+	padding: 2vh;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.profile-liste-adresses{
+	text-align: left;
+	padding: 1vh;
+}
+
+.profile-liste-adresses i{
+	color: #2C81E9;
+}
+
+.profile-liste-adresses .row:hover{
+	cursor: pointer;
+}
+
+.profile-liste-adresses .row{
+	margin-top: .4vh;
+	margin-bottom: .4vh;
+}
+
+.profile-panel-boutons{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+.rating-bar > i{
+	font-size: 4vh;
+}
+
+.profile-liste-adresses h3{
+	font-size: 2.3vh;
+	padding: .4vh;
+}
+
+.profile-carte h1{
+	font-weight: bold;
+	font-size: 4vh;
+}
+
+.profile-carte h2{
+	font-weight: bold;
+	font-size: 3vh;
+}
+
+.profil-avatar{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e69de+0,3690f0+49,54a3ee+50,6db3f2+100 */
+	background: #1e69de; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #1e69de 0%, #3690f0 49%, #54a3ee 50%, #6db3f2 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #1e69de 0%,#3690f0 49%,#54a3ee 50%,#6db3f2 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #1e69de 0%,#3690f0 49%,#54a3ee 50%,#6db3f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e69de', endColorstr='#6db3f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	position: absolute;
+	bottom: -5vw;
+	font-size: 8vw;
+	border-radius: 50%;
+	left: 44vw;
+	right: 44vw;
+	text-align: center;
+	color: white;
+	width: auto;
+	transition: all .5s;
+}
+
+.content-profile{
+	min-height: 65vh;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+	background: #f6f8f9; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

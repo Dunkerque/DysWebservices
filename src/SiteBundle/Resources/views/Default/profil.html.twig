@@ -1,0 +1,115 @@
+{% extends 'sitebase.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block nom_user %}{{ user.first_name }}{% endblock %}
+
+{% block main %}
+	<section class="header-profile">
+		<div class="profil-avatar">
+			<i class="fa fa-user"></i>
+		</div>
+	</section>
+	<section class="content-profile">
+		<div class="row">
+			<div class="col-lg-4 col-md-3 col-sm-1 col-xs-1">
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-10 col-xs-10">	
+				<div class="profile-carte">
+					<div class="header-profile-navbar">
+						<i class="fa fa-bars"></i>
+						<label>Profil de {{ user.first_name }} {{ user.last_name }}</label>
+						<i class="fa fa-ellipsis-v"></i>
+					</div>
+					<div class="header-profile-navbar-buttons">
+						<button type="button" class="header-button close-header">
+							<i class="fa fa-times"></i><label>Close</label>
+						</button>
+						<button type="button" class="header-button modify-header">
+							<i class="fa fa-pencil"></i><label>Modify</label>
+						</button>
+						<button type="button" class="header-button link-header">
+							<i class="fa fa-link"></i><label>Link</label>
+						</button>
+					</div>
+					<div class="profile-card-content">
+						<h1>{{ user.first_name }} {{ user.last_name }}</h1>
+						<h2>{{ user.birthdate|date("d/m/Y") }}</h2>
+						<h2>{{ user.mail }}</h2>
+						<h2>0{{ user.phone }}</h2>
+						<div class="profile-liste-adresses">
+						{% for adresses in listeAdresses %}
+							<div class="row">
+								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+									<h3><i class="fa fa-home"></i></h3>
+								</div>
+								<div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">
+									<h3>{{ adresses.numbre }} {{ adresses.avenue|replace('_', ' ') }} {{ adresses.postcode }} {{ adresses.city }} </h3>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+						<div class="profile-panel-boutons">
+							<button type="button" class="button-page-profil button-ajouter-adresse">Ajouter adresse</button>
+							<button type="button" class="button-page-profil button-ajouter-equipement">Ajouter équipement</button>
+						</div>
+						<div class="profile-panel-boutons-v">
+							<button type="button" class="bzh button-historique"><i class="fa fa-envelope-o"></i></button>
+							<span class="rating-bar">
+								<i class="fa fa-star-o"></i>
+								<i class="fa fa-star-o"></i>
+								<i class="fa fa-star-o"></i>
+								<i class="fa fa-star-o"></i>
+								<i class="fa fa-star-o"></i>
+							</span>
+							<button type="button" class="bzh button-messagerie"><i class="fa fa-history"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-3 col-sm-1 col-xs-1">
+			</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.content-profile').hide();
+			$('footer').hide();
+			$('nav').addClass('navbar-invisible');
+			$('body').css("background", "white");
+			var taille_page = $('.header-profile').height();
+			setTimeout(function(){
+				$('.content-profile').css("padding-top", $('.profil-avatar').height()/1.5);
+				$('.content-profile').css("padding-bottom", $('.profil-avatar').height()/1.5)-10;
+				$(window).scroll( function() { 
+			      var scrolled_val = $(document).scrollTop().valueOf();
+			      if(scrolled_val >= taille_page - $('.profil-avatar').height()/2){
+			        $('.profil-avatar').css("opacity", 0);
+					$('nav').removeClass('navbar-invisible');
+			      }else{
+			        $('.profil-avatar').css("opacity", 1);
+					$('nav').addClass('navbar-invisible');
+			      }
+			    });
+			    $('footer').fadeIn(700);
+				$('.content-profile').fadeIn();
+				setTimeout(function(){
+					$('.profile-card-content').css("padding-top", $('.header-profile-navbar').height()*3);
+				}, 300);
+			}, 600);
+
+			$('.header-profile-navbar > .fa-bars').click(function(){
+				$('.header-profile-navbar-buttons').toggleClass('header-profile-navbar-buttons-visible')
+			});
+			
+			$('.close-header').click(function(){
+				$('.header-profile-navbar-buttons').toggleClass('header-profile-navbar-buttons-visible')
+			});
+
+			
+		    
+		});
+	</script>
+{% endblock %}

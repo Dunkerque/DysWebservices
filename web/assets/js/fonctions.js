@@ -53,8 +53,10 @@ function resizeHome(){
       if(scrolled_val >= taille_page){
         $('.barre-nav').css("opacity", 1);
         $('.section-all-seances').css("opacity", 1);
+        $('.zywiec').css("margin-top", scrolled_val - taille_page);
       }else{
         $('.barre-nav').css("opacity", 0);
+        $('.zywiec').css("margin-top", 0);
       }
     });
   });

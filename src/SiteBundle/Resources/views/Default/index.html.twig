@@ -116,6 +116,7 @@
 {% block javascripts %}
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('footer').hide();
 			$('nav').css("opacity", 0);
 			setTimeout(function(){
 				$('h1').toggleClass('object-hidden-trans');

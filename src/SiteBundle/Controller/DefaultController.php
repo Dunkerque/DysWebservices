@@ -46,6 +46,31 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/profil", name="site_profil")
+     */
+    public function profilAction(Request $request)
+    {
+    	$session = $request->getSession();
+    	if ($session->has('id')) {
+	    	$id_user = $session->get('id');
+
+	    	$getUsers = $this->get("services.users");
+			$user = $getUsers->findUserById($id_user);
+
+			$getSeances = $this->get("services.seance");
+			$freeSeances = $getSeances->getFreeSeance();
+			$paidSeances = $getSeances->getPaidSeance();
+
+            $getAdresses = $this->get("services.adresse");
+            $listeAdresses = $getAdresses->getAddressUser($id_user);
+
+	        return $this->render('SiteBundle:Default:profil.html.twig', array('id_user' => $id_user, 'user' => $user, 'freeSeances' => $freeSeances, 'paidSeances' => $paidSeances, 'listeAdresses' => $listeAdresses));
+	    }else{
+	    	return $this->redirect( $this->generateUrl('site_carrefour') );
+	    }
+    }
+
+    /**
      * @Route("/user/connect", name="site_user_connect")
      */
     public function connectAction(Request $request)

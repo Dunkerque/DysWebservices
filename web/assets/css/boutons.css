@@ -12,6 +12,49 @@
 	background-color: transparent;
 }
 
+.button-share{
+	width: 100%;
+	margin: 2vh 0vh;
+	text-align: left;
+	font-weight: bold;
+	font-size: 2.2vh;
+	padding: 1vh;
+	font-family: 'Droid Sans', sans-serif;
+	z-index: 1;
+	border: none;
+	color: white;
+	outline: none;
+}
+
+.button-share:hover i{
+	opacity: 1;
+	right: 5vh;
+}
+
+.button-share i{
+	transition: all .5s;
+	position: absolute;
+	opacity: 0;
+	right: 8vh;
+	font-size: 2.7vh;
+	padding: .4vh;
+	z-index: 1;
+	color: white;
+}
+
+
+.button-share-fb{
+	background-color: #3A5795;
+}
+
+.button-share-tw{
+	background-color: #5EA9DD;
+}
+
+.button-share-gp{
+	background-color: #C23323;
+}
+
 .button-get-started{
 	background-color: transparent;
 	border: 2px solid white;
@@ -33,6 +76,72 @@
 	background-color: #578AB5;
 	margin: 0;
 	margin: 1vh;
+}
+
+.button-page-profil{
+	text-transform: uppercase;
+	border: none;
+	font-size: 1.5vh;
+	padding: 1vh;
+	color: white;
+	width: 45%;
+	outline: none;
+	transition: all .5s;
+}
+
+.bzh{
+	font-size: 5vh;
+	border:none;
+	background: transparent;
+	outline: none;
+}
+
+.button-ajouter-adresse{
+	background-color: #2C86D8;
+}
+
+.button-ajouter-adresse:hover{
+	background-color: #2969B0;
+}
+
+.button-ajouter-equipement{
+	background-color: #61BD6D;
+}
+
+.button-ajouter-equipement:hover{
+	background-color: #41A85F;
+}
+
+.header-button{
+	background: transparent;
+	border: none;
+	outline: none;
+	padding: 0;
+	transition: all .5s;
+}
+
+.header-button:hover label{
+	color: black;
+}
+
+.close-header{
+	color: #FF1B05;
+}
+
+.modify-header{
+	color: #2F85EB;
+}
+
+.link-header{
+	color: #61BD6D;
+}
+
+
+.header-button label{
+	color: white;
+	margin: 0;
+	margin-left: 6px;
+	cursor: pointer;
 }
 
 .button-deconnexion-annulation:hover{
@@ -116,20 +225,30 @@
 }
 
 .button-deconnexion{
-	background-color: #FF2A16;
+	background-color: #DE2C1B;
 }
 
-.button-profil{
+.button-profil, .button-accueil{
 	background-color: transparent;
 	font-weight: bold;
 	border-radius: inherit;
 }
 
-.button-profil:hover{
+.button-contact{
+	background-color: #5AA7EF;
+}
+
+.button-contact:hover{
+	color: #5AA7EF;
+	background-color: white;
+	border-color: #5AA7EF;
+}
+
+.button-profil:hover, .button-accueil:hover{
 	color: #3CFF6F;
 }
 
-.button-profil i{
+.button-profil i, .button-accueil i{
 	margin-right: 1vh;
 }
 
