@@ -1,0 +1,32 @@
+.slick-slide{
+	outline: none !important;
+}
+
+.slick-arrow{
+	position: absolute;
+	bottom: 40%;
+	color: #C23323;
+	border: 1px solid transparent;
+	background-color: transparent;
+	outline: none;
+	z-index: 99999999999;
+	padding: .7vh 1.6vh 1vh 1.6vh;
+	border-radius: 50%;
+	transition: all .5s;
+}
+
+.slick-arrow i{
+	font-size: 6vh;
+}
+
+.slick-arrow:hover{
+	color: black;
+}
+
+.slick-prev{
+	left: -5.6vh;
+}
+
+.slick-next{
+	right: -5.6vh;
+}

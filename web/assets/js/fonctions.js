@@ -12,6 +12,7 @@ function resizeHome(){
   var taille_page = $('.section-cover').height();
 
   $('.section-all-seances').css("padding-top", $('nav').height() +10);
+  $('.section-all-seances').css("padding-bottom", $('nav').height() +10);
   var max_value = 0;
   $('.seance-block img').each(function(){
     var hauteur = $(this).height();
@@ -20,7 +21,7 @@ function resizeHome(){
     }
   });
   $('.seance-block img').each(function(){
-    $(this).css("height", max_value-40);
+    $(this).css("height", max_value);
   });
   max_value = 0;
   $('.seance-titre-film').each(function(){

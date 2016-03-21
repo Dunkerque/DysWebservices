@@ -43,11 +43,11 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<div class="seance-proximite">
+				<div class="seance-column seance-proximite">
 					<h3>Séances à proximité:</h3>
-					<div class="row">
+					<div class="row agaga">
 						{% for seance in freeSeances %}
-							<div class="seance-block col-lg-4 col-md-4 col-sm-4 col-xs-6">
+							<div class="seance-block col-lg-3 col-md-4 col-sm-4 col-xs-6">
 								<div class="seance-layout" data-seance="{{ seance.id }}">
 									<img src="{{ seance.id_film.image }}" alt="affiche"/>
 									<div class="seance-description">
@@ -67,8 +67,7 @@
 											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
 										</div>
 									</div>
-									<div class="seance-titre-film">		 
-										{{ seance.id_film.title }}
+									<div class="seance-titre-film">	
 										<div class="seance-prix-seance">
 											{{ seance.price }}€
 										</div>
@@ -77,7 +76,7 @@
 							</div>
 					   {% endfor %}
 					   {% for seance in paidSeances %}
-							<div class="seance-block col-lg-4 col-md-4 col-sm-4 col-xs-6">
+							<div class="seance-block col-lg-3 col-md-4 col-sm-4 col-xs-6">
 								<div class="seance-layout" data-seance="{{ seance.id }}">
 									<img src="{{ seance.id_film.image }}" alt="affiche"/>
 									<div class="seance-description">
@@ -97,8 +96,76 @@
 											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
 										</div>
 									</div>
-									<div class="seance-titre-film">		 
-										{{ seance.id_film.title }}
+									<div class="seance-titre-film">
+										<div class="seance-prix-seance">
+											{{ seance.price }}€
+										</div>
+									</div>
+								</div>
+							</div>
+					   {% endfor %}
+				    </div>
+				</div>
+				
+				<div class="seance-column seance-proximite">
+					<h3>Séances gratuites:</h3>
+					<div class="row agaga">
+						{% for seance in freeSeances %}
+							<div class="seance-block col-lg-3 col-md-4 col-sm-4 col-xs-6">
+								<div class="seance-layout" data-seance="{{ seance.id }}">
+									<img src="{{ seance.id_film.image }}" alt="affiche"/>
+									<div class="seance-description">
+										<div class="seance-description-titre">{{ seance.id_film.title }}</div>
+										<div class="seance-description-category"><label>Categorie:</label> {{ seance.id_film.category }}</div>
+										<div class="seance-description-resume">{{ seance.id_film.description }}</div>
+										<div class="seance-description-horaires">
+											<i class="fa fa-calendar"></i>
+											{{ seance.start_seance }}<br/>
+											<i class="fa fa-calendar"></i>
+											{{ seance.end_seance }}
+										</div>
+										<div class="seance-description-places">
+											{{ seance.nbr_place }} places restantes
+										</div>
+										<div class="seance-description-auteur">
+											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
+										</div>
+									</div>
+									<div class="seance-titre-film">	
+										<div class="seance-prix-seance">
+											{{ seance.price }}€
+										</div>
+									</div>
+								</div>
+							</div>
+					   {% endfor %}
+				    </div>
+				</div>
+				<div class="seance-column seance-proximite">
+					<h3>Séances payantes:</h3>
+					<div class="row agaga">
+						{% for seance in paidSeances %}
+							<div class="seance-block col-lg-3 col-md-4 col-sm-4 col-xs-6">
+								<div class="seance-layout" data-seance="{{ seance.id }}">
+									<img src="{{ seance.id_film.image }}" alt="affiche"/>
+									<div class="seance-description">
+										<div class="seance-description-titre">{{ seance.id_film.title }}</div>
+										<div class="seance-description-category"><label>Categorie:</label> {{ seance.id_film.category }}</div>
+										<div class="seance-description-resume">{{ seance.id_film.description }}</div>
+										<div class="seance-description-horaires">
+											<i class="fa fa-calendar"></i>
+											{{ seance.start_seance }}<br/>
+											<i class="fa fa-calendar"></i>
+											{{ seance.end_seance }}
+										</div>
+										<div class="seance-description-places">
+											{{ seance.nbr_place }} places restantes
+										</div>
+										<div class="seance-description-auteur">
+											Postée par: {{ seance.id_organizer.first_name }} {{ seance.id_organizer.last_name }}
+										</div>
+									</div>
+									<div class="seance-titre-film">	
 										<div class="seance-prix-seance">
 											{{ seance.price }}€
 										</div>
@@ -127,6 +194,19 @@
 
 			$('.barre-nav').css("opacity", 0);
 
+			$('.agaga').slick({
+				dots: false,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 3,
+				autoplay: true,
+  				autoplaySpeed: 5000,
+				centerMode: true
+			});
+
+			$('.slick-prev').html('<i class="fa fa-angle-left"></i>');
+			$('.slick-next').html('<i class="fa fa-angle-right"></i>');
+
 			$('body').on('click', '.go-all-seances', function(){
 				scroller('#debut-page');
 			});
@@ -139,6 +219,8 @@
 
 			setTimeout(function(){
 				resizeHome();
+				$('.seance-titre-film').css("height", "0");
+				$('.seance-titre-film').css("padding", "0");
 			}, 800);
 
 		});
